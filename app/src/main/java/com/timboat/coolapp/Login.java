@@ -24,7 +24,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+/*
         getWindow().setEnterTransition(null);
 
         fadeOut = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_out_activity);
@@ -55,6 +55,7 @@ public class Login extends AppCompatActivity {
 
         password = (EditText) findViewById(R.id.password_textbox);
         password.setTextColor(Color.WHITE);
+        */
     }
 
     private void openSignUp() {

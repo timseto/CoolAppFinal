@@ -28,6 +28,7 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+        /*
         gif = (GifImageView) findViewById(R.id.gif);
         lastFrame = (ImageView) findViewById(R.id.last_frame);
 
@@ -57,5 +58,6 @@ public class SplashScreen extends AppCompatActivity {
                 SplashScreen.this.finish();
             }
         },3250);
+        */
     }
 }
