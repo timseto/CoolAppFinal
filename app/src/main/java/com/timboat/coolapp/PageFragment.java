@@ -11,11 +11,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
+
+import java.util.ArrayList;
 
 
 /**
@@ -29,6 +32,7 @@ public class PageFragment extends android.support.v4.app.Fragment {
     FloatingActionButton bubbleStart, bubble1, bubble2, bubble3;
     Animation bubbleOpen, bubbleClose, rotateClockwise, rotateCounterClockwise;
     RelativeLayout entireFragment;
+    adapterList theAdapter;
     int type;
 
     public PageFragment() {
@@ -43,6 +47,13 @@ public class PageFragment extends android.support.v4.app.Fragment {
         Bundle bundle = getArguments();
         textView =(TextView) view.findViewById(R.id.text_view);
         listView = (ListView) view.findViewById(R.id.item_list);
+
+        ArrayList<Item> wishlist = new ArrayList<Item>();
+        for(String[] item : WebUtility.wishList)
+            wishlist.add(new Item(item[0],Integer.parseInt(item[1]),10));
+        theAdapter = new adapterList(this.getContext(), wishlist);
+        listView.setAdapter(theAdapter);
+
         wishListTitle = (TextView) view.findViewById(R.id.wish_list_title);
         bubbleStart = (FloatingActionButton) view.findViewById(R.id.bubble_open_start);
         bubble1 = (FloatingActionButton) view.findViewById(R.id.bubble_element1);
@@ -65,6 +76,12 @@ public class PageFragment extends android.support.v4.app.Fragment {
         {
             bubbleStart.setVisibility(View.VISIBLE);
             listView.setVisibility(View.VISIBLE);
+
+            //for(Item item: wishlist)
+                //theAdapter.add(item);
+
+
+
             wishListTitle.setVisibility(View.VISIBLE);
 
             bubbleStart.setOnClickListener(new View.OnClickListener() {

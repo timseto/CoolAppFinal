@@ -1,5 +1,6 @@
 package com.timboat.coolapp;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -31,7 +32,7 @@ public class WebUtility {
         }
     }
 
-    public static ArrayList<String[]> wishList = null;
+    public static String[][] wishList = null;
     public static Store[] stores = null;
 
 
@@ -55,7 +56,8 @@ public class WebUtility {
 
             for(int i = 0; i < list.length; i++)
             {
-                wishList.add(list[i]);
+                wishList = list;
+                //wishList.add(new Item(list[i][0], Integer.parseInt(list[i][1]),10));
             }
             return null;
         }
