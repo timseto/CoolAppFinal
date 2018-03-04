@@ -29,6 +29,7 @@ public class PageFragment extends android.support.v4.app.Fragment {
     FloatingActionButton bubbleStart, bubble1, bubble2, bubble3;
     Animation bubbleOpen, bubbleClose, rotateClockwise, rotateCounterClockwise;
     RelativeLayout entireFragment;
+    String type;
 
     public PageFragment() {
         // Required empty public constructor
@@ -91,19 +92,22 @@ public class PageFragment extends android.support.v4.app.Fragment {
                         bubble1.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                openAdder();
+                                type = "clothes";
+                                openAdder(type);
                             }
                         });
                         bubble2.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                openAdder();
+                                type = "tech";
+                                openAdder(type);
                             }
                         });
                         bubble3.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                openAdder();
+                                type = "grocery";
+                                openAdder(type);
                             }
                         });
                         isOpen=true;
@@ -114,8 +118,9 @@ public class PageFragment extends android.support.v4.app.Fragment {
         return view;
    }
 
-    private void openAdder() {
+    private void openAdder(String type) {
         Intent a = new Intent(getActivity(), itemAdder.class);
+        a.putExtra("typeString", type);
         startActivity(a);
         bubble1.startAnimation(bubbleClose);
         bubble2.startAnimation(bubbleClose);
