@@ -48,37 +48,40 @@
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/bubble_element2"
+        android:src="@drawable/ic_action_chip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="450dp"
         android:layout_marginLeft="335dp"
         android:elevation="6dp"
         android:adjustViewBounds="true"
-        app:backgroundTint="@color/option2"
+        app:backgroundTint="@color/colorPrimary"
         app:pressedTranslationZ="12dp"
-        android:visibility="invisible"/>
+        android:visibility="visible"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/bubble_element1"
+        android:src="@drawable/ic_action_tshirt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="530dp"
         android:layout_marginLeft="335dp"
         android:elevation="6dp"
-        app:backgroundTint="@color/option1"
+        app:backgroundTint="@color/colorPrimaryLight"
         app:pressedTranslationZ="12dp"
-        android:visibility="invisible"/>
+        android:visibility="visible"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/bubble_element3"
+        android:src="@drawable/ic_action_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="370dp"
         android:layout_marginLeft="335dp"
         android:elevation="6dp"
-        app:backgroundTint="@color/option2"
+        app:backgroundTint="@color/secondaryColorLight"
         app:pressedTranslationZ="12dp"
-        android:visibility="invisible" />
+        android:visibility="visible" />
 
     <fragment
         android:layout_width="match_parent"

@@ -11,4 +11,5 @@
     <color name="darkAccent">#3A170A</color>
     <color name="secondaryColorLight">#c1272d</color>
     <color name="secondaryColorDark">#a3272d</color>
+    <color name="accentDark">#40ad85</color>
 </resources>

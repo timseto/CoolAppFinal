@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
 
-    <ImageView
-        android:id="@+id/type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/grocery"
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/bubble"
+        android:src="@drawable/ic_action_chip"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
         android:adjustViewBounds="true"
-        android:maxHeight="60dp"
-        />
+        android:maxHeight="65dp"
+        android:elevation="6dp"
+        android:layout_marginTop="5dp"
+        app:backgroundTint="@color/colorPrimary"
+        app:pressedTranslationZ="12dp"
+        android:visibility="visible" />
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,6 +44,7 @@
         android:layout_height="wrap_content"
         android:textSize="25dp"
         android:text="Name"
+        android:layout_gravity="right"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="5dp"/>
 

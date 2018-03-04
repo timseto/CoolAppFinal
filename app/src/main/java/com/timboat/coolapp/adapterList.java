@@ -3,6 +3,7 @@ package com.timboat.coolapp;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,18 +45,18 @@ public class adapterList extends ArrayAdapter<Item> {
 
 
         if(item_type == 0){
-            ImageView itemPicture = (ImageView) theView.findViewById(R.id.type);
-            itemPicture.setImageResource(R.drawable.clothes);
+            FloatingActionButton itemPicture = (FloatingActionButton) theView.findViewById(R.id.bubble);
+            itemPicture.setImageResource(R.drawable.ic_action_tshirt);
             return theView;
         }
         else if(item_type == 1){
-            ImageView itemPicture = (ImageView) theView.findViewById(R.id.type);
-            itemPicture.setImageResource(R.drawable.technology);
+            FloatingActionButton itemPicture = (FloatingActionButton) theView.findViewById(R.id.bubble);
+            itemPicture.setImageResource(R.drawable.ic_action_chip);
             return theView;
         }
         else if(item_type == 2){
-            ImageView itemPicture = (ImageView) theView.findViewById(R.id.type);
-            itemPicture.setImageResource(R.drawable.grocery);
+            FloatingActionButton itemPicture = (FloatingActionButton) theView.findViewById(R.id.bubble);
+            itemPicture.setImageResource(R.drawable.ic_action_name);
             return theView;
         }
         return theView;
