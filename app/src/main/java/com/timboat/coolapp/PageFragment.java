@@ -1,6 +1,7 @@
 package com.timboat.coolapp;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -26,6 +28,7 @@ public class PageFragment extends android.support.v4.app.Fragment {
     TextView wishListTitle;
     FloatingActionButton bubbleStart, bubble1, bubble2, bubble3;
     Animation bubbleOpen, bubbleClose, rotateClockwise, rotateCounterClockwise;
+    RelativeLayout entireFragment;
 
     public PageFragment() {
         // Required empty public constructor
@@ -44,6 +47,7 @@ public class PageFragment extends android.support.v4.app.Fragment {
         bubble1 = (FloatingActionButton) view.findViewById(R.id.bubble_element1);
         bubble2 = (FloatingActionButton) view.findViewById(R.id.bubble_element2);
         bubble3 = (FloatingActionButton) view.findViewById(R.id.bubble_element3);
+        entireFragment = (RelativeLayout) view.findViewById(R.id.entire_fragment);
 
         bubbleOpen = AnimationUtils.loadAnimation(getActivity(),R.anim.bubble_open);
         bubbleClose = AnimationUtils.loadAnimation(getActivity(),R.anim.bubble_close);
@@ -83,6 +87,25 @@ public class PageFragment extends android.support.v4.app.Fragment {
                         bubble1.setClickable(true);
                         bubble2.setClickable(true);
                         bubble3.setClickable(true);
+
+                        bubble1.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                openAdder();
+                            }
+                        });
+                        bubble2.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                openAdder();
+                            }
+                        });
+                        bubble3.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                openAdder();
+                            }
+                        });
                         isOpen=true;
                     }
                 }
@@ -90,5 +113,18 @@ public class PageFragment extends android.support.v4.app.Fragment {
         }
         return view;
    }
+
+    private void openAdder() {
+        Intent a = new Intent(getActivity(), itemAdder.class);
+        startActivity(a);
+        bubble1.startAnimation(bubbleClose);
+        bubble2.startAnimation(bubbleClose);
+        bubble3.startAnimation(bubbleClose);
+        bubbleStart.startAnimation(rotateCounterClockwise);
+        bubble1.setClickable(false);
+        bubble2.setClickable(false);
+        bubble3.setClickable(false);
+        isOpen = false;
+    }
 }
 

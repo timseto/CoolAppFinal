@@ -21,8 +21,8 @@ import java.io.InputStream;
 public class SplashScreen extends AppCompatActivity {
 
     private GifImageView gif;
-    private ImageView lastFrame;
-    private Animation fade_out;
+    private ImageView lastFrame,startFrame;
+    private Animation fade_out,fade_in;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +31,12 @@ public class SplashScreen extends AppCompatActivity {
 
         gif = (GifImageView) findViewById(R.id.gif);
         lastFrame = (ImageView) findViewById(R.id.last_frame);
-
         fade_out = AnimationUtils.loadAnimation(this,R.anim.splash_fade_out);
+        fade_in = AnimationUtils.loadAnimation(this,R.anim.fade_in_activity);
+        startFrame = (ImageView) findViewById(R.id.start_frame);
+        startFrame.startAnimation(fade_in);
+        startFrame.setVisibility(View.VISIBLE);
+        gif.startAnimation(fade_in);
 
         try{
             InputStream inputStream = getAssets().open("logo.gif");
@@ -48,16 +52,16 @@ public class SplashScreen extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void run() {
+                startFrame.setVisibility(View.INVISIBLE);
                 lastFrame.setVisibility(View.VISIBLE);
                 gif.setVisibility(View.INVISIBLE);
-                lastFrame.startAnimation(fade_out);
                 lastFrame.setVisibility(View.INVISIBLE);
+                lastFrame.startAnimation(fade_out);
                 SplashScreen.this.startActivity
                         (new Intent(SplashScreen.this,Login.class));
                 overridePendingTransition(0,0);
                 SplashScreen.this.finish();
             }
-        },2800);
-
+        },2519);
     }
 }

@@ -18,11 +18,12 @@
         <!--> App logo <!-->
         <ImageView
             android:id="@+id/logo_picture"
-            android:src="@drawable/logo_final_frame"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center_horizontal"
+            android:src="@drawable/logo_last_frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="126dp"
             android:adjustViewBounds="true"
+            android:maxHeight="125dp"
             android:transitionName="app_logo"/>
 
         <!--> App name <!-->

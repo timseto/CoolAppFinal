@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context="com.timboat.coolapp.PageFragment"
     android:orientation="vertical"
-    android:id="@+id/drawer">
+    android:id="@+id/entire_fragment">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -14,9 +14,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="40dp"
-        android:text="WishList"
+        android:text="Wishlist"
         android:layout_marginTop="30dp"
-        android:visibility="visible"/>
+        android:visibility="invisible"/>
 
     <TextView
         android:id="@+id/text_view"
@@ -38,7 +38,7 @@
         android:id="@+id/bubble_open_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="610dp"
         android:layout_marginLeft="335dp"
         android:src="@drawable/ic_action_plus"
         android:elevation="6dp"
@@ -50,9 +50,10 @@
         android:id="@+id/bubble_element2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="450dp"
         android:layout_marginLeft="335dp"
         android:elevation="6dp"
+        android:adjustViewBounds="true"
         app:backgroundTint="@color/option2"
         app:pressedTranslationZ="12dp"
         android:visibility="invisible"/>
@@ -61,7 +62,7 @@
         android:id="@+id/bubble_element1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="135dp"
+        android:layout_marginTop="530dp"
         android:layout_marginLeft="335dp"
         android:elevation="6dp"
         app:backgroundTint="@color/option1"
@@ -72,7 +73,7 @@
         android:id="@+id/bubble_element3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="305dp"
+        android:layout_marginTop="370dp"
         android:layout_marginLeft="335dp"
         android:elevation="6dp"
         app:backgroundTint="@color/option2"

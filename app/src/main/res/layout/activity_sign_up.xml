@@ -8,7 +8,7 @@
     tools:context="com.timboat.coolapp.SignUp">
 
     <LinearLayout
-        android:id="@+id/login_layout"
+        android:id="@+id/sign_up_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -17,10 +17,11 @@
         <!--> App logo <!-->
         <ImageView
             android:id="@+id/logo_picture_2"
-            android:src="@drawable/logo_final_frame"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center_horizontal"
+            android:src="@drawable/logo_last_frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxHeight="125dp"
+            android:layout_marginLeft="126dp"
             android:adjustViewBounds="true" />
 
         <!--> App name <!-->
