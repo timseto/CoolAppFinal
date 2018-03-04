@@ -21,7 +21,7 @@ import java.io.InputStream;
 public class SplashScreen extends AppCompatActivity {
 
     private GifImageView gif;
-    private ImageView lastFrame,startFrame;
+    private ImageView lastFrame,startFrame,slogan;
     private Animation fade_out,fade_in;
 
     @Override
@@ -30,11 +30,13 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
 
         gif = (GifImageView) findViewById(R.id.gif);
+        slogan = (ImageView) findViewById(R.id.slogan_id);
         lastFrame = (ImageView) findViewById(R.id.last_frame);
         fade_out = AnimationUtils.loadAnimation(this,R.anim.splash_fade_out);
         fade_in = AnimationUtils.loadAnimation(this,R.anim.fade_in_activity);
         startFrame = (ImageView) findViewById(R.id.start_frame);
         startFrame.startAnimation(fade_in);
+        slogan.startAnimation(fade_in);
         startFrame.setVisibility(View.VISIBLE);
         gif.startAnimation(fade_in);
 
@@ -57,11 +59,13 @@ public class SplashScreen extends AppCompatActivity {
                 gif.setVisibility(View.INVISIBLE);
                 lastFrame.setVisibility(View.INVISIBLE);
                 lastFrame.startAnimation(fade_out);
+                slogan.startAnimation(fade_out);
+
                 SplashScreen.this.startActivity
                         (new Intent(SplashScreen.this,Login.class));
                 overridePendingTransition(0,0);
                 SplashScreen.this.finish();
             }
-        },2519);
+        },2700);
     }
 }

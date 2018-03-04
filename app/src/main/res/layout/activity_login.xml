@@ -27,14 +27,13 @@
             android:transitionName="app_logo"/>
 
         <!--> App name <!-->
-        <TextView
-            android:id="@+id/app_name_2"
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="WANDER"
-            android:textSize="30sp"
-            android:textColor="#a3272d"/>
+            android:adjustViewBounds="true"
+            android:src="@drawable/title"
+            android:maxWidth="150dp"
+            android:layout_gravity="center"/>
 
         <!--> Username section <!-->
         <LinearLayout
@@ -102,8 +101,8 @@
         <!--> Login Button <!-->
         <Button
             android:id="@+id/login_button"
-            android:layout_width="150dp"
-            android:layout_height="35dp"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
             android:layout_margin="5dp"
             android:background="@drawable/login_button_style"
@@ -116,8 +115,8 @@
         <!--> Sign Up Button <!-->
         <Button
             android:id="@+id/sign_up_button"
-            android:layout_width="150dp"
-            android:layout_height="35dp"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
             android:layout_margin="5dp"
             android:background="@drawable/login_button_style"
