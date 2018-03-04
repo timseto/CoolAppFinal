@@ -1,6 +1,5 @@
 package com.timboat.coolapp;
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -36,7 +35,7 @@ public class WebUtility {
     public static Store[] stores = null;
 
 
-    public static class getWishListTask extends AsyncTask<URL, Void, Void> {
+    public static class getListTask extends AsyncTask<URL, Void, Void> {
 
         @Override
         protected Void doInBackground(URL... urls) {
@@ -48,47 +47,17 @@ public class WebUtility {
             try {
 
                 String raw = getResultFromHTTPRequest(urls[0]);
-                list = parseWishlistJSON(raw);
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            for(int i = 0; i < list.length; i++)
-            {
-                wishList = list;
-                //wishList.add(new Item(list[i][0], Integer.parseInt(list[i][1]),10));
-            }
-            return null;
-        }
-
-    }
-
-    public static class getStoreTask extends AsyncTask<URL, Void, Void>{
-
-        @Override
-        protected Void doInBackground(URL... urls) {
-            Store[] list = null;
-
-            if(urls[0] == null)
-                return null;
-
-            try {
-
-                String raw = getResultFromHTTPRequest(urls[0]);
-                list = parseStoresJSON(raw);
+                parseJSON(raw);
 
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
 
-            stores = list;
             return null;
         }
 
     }
-
 
     public static class editWishListTask extends AsyncTask<String, Void, Void>{
 
@@ -134,6 +103,17 @@ public class WebUtility {
         } finally{
             connection.disconnect();
         }
+    }
+
+    public static void parseJSON(String raw) throws JSONException {
+
+        try {
+            wishList = parseWishlistJSON(raw);
+            stores = parseStoresJSON(raw);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public static String[][] parseWishlistJSON(String raw) throws JSONException {

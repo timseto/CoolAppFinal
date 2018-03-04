@@ -22,6 +22,5 @@ public class Home extends FragmentActivity{
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         SwipeAdapter swipeAdapter = new SwipeAdapter(getSupportFragmentManager());
         viewPager.setAdapter(swipeAdapter);
-
     }
 }

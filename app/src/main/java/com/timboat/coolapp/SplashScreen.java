@@ -26,8 +26,7 @@ public class SplashScreen extends AppCompatActivity {
     private ImageView lastFrame,startFrame,slogan;
     private Animation fade_out,fade_in;
 
-    public final String WISHLISTLINK = "http://www.eng.uwaterloo.ca/~wrraftus/data/wishlist.json";
-    public final String STORELINK = "http://www.eng.uwaterloo.ca/~wrraftus/data/stores.json";
+    public final String LISTLINK = "http://www.eng.uwaterloo.ca/~wrraftus/data/list.json";
     public final String EDITWISHLISTLINK = "http://10.0.2.2:8082";
 
     @Override
@@ -38,16 +37,14 @@ public class SplashScreen extends AppCompatActivity {
         URL wishListURL = null;
         URL storeURL = null;
         try {
-            wishListURL = new URL(WISHLISTLINK);
-            storeURL = new URL(STORELINK);
+            wishListURL = new URL(LISTLINK);
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
 
         }
 
-        new WebUtility.getWishListTask().execute(wishListURL);
-        new WebUtility.getStoreTask().execute(storeURL);
+        new WebUtility.getListTask().execute(wishListURL);
 
         gif = (GifImageView) findViewById(R.id.gif);
         slogan = (ImageView) findViewById(R.id.slogan_id);
