@@ -39,10 +39,9 @@ public class adapterList extends ArrayAdapter<Item> {
         TextView name = (TextView) theView.findViewById(R.id.name);
         name.setText(item_name);
         TextView price = (TextView) theView.findViewById(R.id.price);
-        price.setText("$"+ String.valueOf(item_price));
+        price.setText("Date added: 03/04/18");
         TextView store = (TextView) theView.findViewById(R.id.store);
         store.setText(item_store);
-
 
         if(item_type == 0){
             FloatingActionButton itemPicture = (FloatingActionButton) theView.findViewById(R.id.bubble);

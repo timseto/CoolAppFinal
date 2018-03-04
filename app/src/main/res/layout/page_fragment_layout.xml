@@ -9,12 +9,26 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <ImageView
+        android:id="@+id/settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/gear"
+        android:adjustViewBounds="true"
+        android:maxHeight="35dp"
+        android:clickable="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:visibility="invisible"
+        android:layout_alignParentTop="true"
+        />
+
     <TextView
         android:id="@+id/wish_list_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="40dp"
-        android:text="Wishlist"
+        android:text=""
         android:layout_marginTop="30dp"
         android:visibility="invisible"/>
 
@@ -41,7 +55,7 @@
         android:id="@+id/bubble_open_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="610dp"
+        android:layout_marginTop="25dp"
         android:layout_marginLeft="335dp"
         android:src="@drawable/ic_action_plus"
         android:elevation="6dp"
@@ -54,7 +68,7 @@
         android:src="@drawable/ic_action_chip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="190dp"
         android:layout_marginLeft="335dp"
         android:elevation="6dp"
         android:adjustViewBounds="true"
@@ -67,7 +81,7 @@
         android:src="@drawable/ic_action_tshirt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="530dp"
+        android:layout_marginTop="105dp"
         android:layout_marginLeft="335dp"
         android:elevation="6dp"
         app:backgroundTint="@color/colorPrimaryLight"
@@ -79,7 +93,7 @@
         android:src="@drawable/ic_action_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="370dp"
+        android:layout_marginTop="275dp"
         android:layout_marginLeft="335dp"
         android:elevation="6dp"
         app:backgroundTint="@color/secondaryColorLight"
@@ -88,17 +102,17 @@
 
     <fragment
         android:layout_width="match_parent"
-        android:layout_height="375dp"
+        android:layout_height="550dp"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:id="@+id/mapFragment"
         android:visibility="visible"/>
 
-    <ListView
-        android:id="@+id/have"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/mapFragment"
-        android:visibility="invisible" />
+        <ListView
+            android:id="@+id/have"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mapFragment"
+            android:visibility="invisible"/>
 
 
 </RelativeLayout>

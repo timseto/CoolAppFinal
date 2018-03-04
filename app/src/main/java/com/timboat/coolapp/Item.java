@@ -25,9 +25,7 @@ public class Item {
     public int getType(){
         return type;
     }
-    public int getPrice(){
-        return price;
-    }
+    public int getPrice(){return price;}
     public String getStore(){return store;}
 
 }

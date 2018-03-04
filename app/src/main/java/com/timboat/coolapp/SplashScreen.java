@@ -27,7 +27,6 @@ public class SplashScreen extends AppCompatActivity {
     private Animation fade_out,fade_in;
 
     public final String LISTLINK = "http://walterraftus.ca-central-1.elasticbeanstalk.com";
-    public final String EDITWISHLISTLINK = "http://10.0.2.2:8082";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +34,6 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
 
         URL wishListURL = null;
-        URL storeURL = null;
         try {
             wishListURL = new URL(LISTLINK);
 

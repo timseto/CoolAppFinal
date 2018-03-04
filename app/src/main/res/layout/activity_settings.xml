@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/white_background">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp">
+
+        <ImageButton
+            android:id="@+id/settings_back_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/back_button"
+            android:scaleType="centerCrop"
+            android:backgroundTint="@drawable/white_background"
+            android:onClick="onBackClick"/>
+
+        <TextView
+            android:id="@+id/settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:text="Settings"
+            android:textSize="21sp"
+            android:textColor="@color/accentDark"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="#DBDDE0"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:orientation="vertical">
+
+        <!--> AccoSettingsings <!-->
+
+        <TextView
+            android:id="@+id/account_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="Account"
+            android:textAllCaps="true"
+            android:textSize="16sp"
+            android:textColor="@color/accentDark"/>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_margin="15dp"
+            android:background="@color/accentDark"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <!--> Username <!-->
+
+            <TextView
+                android:id="@+id/username_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Username"
+                android:textSize="16sp"
+                android:textColor="@color/darkAccent"/>
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:hint="Username"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <!--> Email <!-->
+
+            <TextView
+                android:id="@+id/email_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Email"
+                android:textSize="16sp"
+                android:textColor="@color/darkAccent"/>
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:hint="Email"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <!--> NotificatSettingsings <!-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/notifications-settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:text="Notifications"
+                android:textAllCaps="true"
+                android:textSize="16sp"
+                android:textColor="@color/accentDark"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_margin="15dp"
+                android:background="@color/accentDark"/>
+
+            <!--> Push Notifications <!-->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/push_notif_settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="Push Notifications"
+                    android:textSize="16sp"
+                    android:textColor="@color/darkAccent"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_push_notif"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginLeft="169dp"
+                    android:checked="true"
+                    android:onClick="onPushNotifCheck"/>
+
+            </LinearLayout>
+
+            <!--> Vibrate <!-->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/vibrate_settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="Vibrate"
+                    android:textSize="16sp"
+                    android:textColor="@color/darkAccent"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_vibrate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginLeft="251dp"
+                    android:checked="true"
+                    android:onClick="onVibrateCheck"/>
+
+            </LinearLayout>
+
+            <!--> Sound <!-->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/sound_settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="Sound"
+                    android:textSize="16sp"
+                    android:textColor="@color/darkAccent"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_sound"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginLeft="256dp"
+                    android:checked="true"
+                    android:onClick="onSoundCheck"/>
+
+            </LinearLayout>
+
+            <!--> Preferences <!-->
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:text="Preferences"
+                android:textAllCaps="true"
+                android:textSize="16sp"
+                android:textColor="@color/accentDark"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_margin="15dp"
+                android:background="@color/accentDark"/>
+
+            <!--> Proximity preference <!-->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="Show stores within "
+                    android:textSize="16sp"
+                    android:textColor="@color/darkAccent"/>
+
+                <EditText
+                    android:id="@+id/distance_settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="5 km"
+                    android:textSize="16sp"
+                    android:ems="5"/>
+
+                <Button
+                    android:id="@+id/OK_preferences_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center|right"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/login_button_style"
+                    android:backgroundTint="@color/accentDark"
+                    android:text="OK"
+                    android:textAllCaps="true"
+                    android:textStyle="bold"
+                    android:textColor="#FDFDFE"
+                    android:clickable="true"
+                    android:onClick="onOKClick"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="#DBDDE0"/>
+
+    <Button
+        android:id="@+id/logout_button"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_gravity="bottom|left"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/login_button_style"
+        android:text="Log out"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#FDFDFE"
+        android:clickable="true"
+        android:onClick="onLogOutClick"/>
+
+</LinearLayout>
