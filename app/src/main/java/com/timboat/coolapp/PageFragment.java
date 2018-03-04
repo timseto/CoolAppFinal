@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,14 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
 
 import org.w3c.dom.Text;
 
@@ -24,8 +33,8 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PageFragment extends android.support.v4.app.Fragment {
-    boolean isOpen = false;
+public class PageFragment extends android.support.v4.app.Fragment implements OnMapReadyCallback {
+
     TextView textView;
     ListView listView;
     TextView wishListTitle;
@@ -33,6 +42,9 @@ public class PageFragment extends android.support.v4.app.Fragment {
     Animation bubbleOpen, bubbleClose, rotateClockwise, rotateCounterClockwise;
     RelativeLayout entireFragment;
     adapterList theAdapter;
+    GoogleMap googleMap;
+
+    boolean isOpen = false;
     int type;
 
     public PageFragment() {
@@ -68,9 +80,18 @@ public class PageFragment extends android.support.v4.app.Fragment {
 
         if(bundle.getInt("count") == 1)
         {
-            textView.setVisibility(View.VISIBLE);
-            String message = Integer.toString(bundle.getInt("count"));
-            textView.setText("This is the " + message +"Swipe View..");
+            if(googlePlayServicesAvailable()) {
+                SupportMapFragment mapFragment = ((SupportMapFragment)getFragmentManager().findFragmentById(R.id.fragment));
+                mapFragment.setMenuVisibility(true);
+                mapFragment.getMapAsync(this);
+                mapFragment.getView().setVisibility(View.VISIBLE);
+            }
+
+            else {
+                textView.setVisibility(View.VISIBLE);
+                String message = Integer.toString(bundle.getInt("count"));
+                textView.setText("This is the " + message + "Swipe View..");
+            }
         }
         else if(bundle.getInt("count") == 2)
         {
@@ -79,7 +100,6 @@ public class PageFragment extends android.support.v4.app.Fragment {
 
             //for(Item item: wishlist)
                 //theAdapter.add(item);
-
 
 
             wishListTitle.setVisibility(View.VISIBLE);
@@ -147,6 +167,21 @@ public class PageFragment extends android.support.v4.app.Fragment {
         bubble2.setClickable(false);
         bubble3.setClickable(false);
         isOpen = false;
+    }
+
+    public boolean googlePlayServicesAvailable(){
+        GoogleApiAvailability api = GoogleApiAvailability.getInstance();
+        int isAvailable = api.isGooglePlayServicesAvailable(this.getContext());
+        Log.d("Connection",Boolean.toString(isAvailable == ConnectionResult.SUCCESS));
+        if(isAvailable == ConnectionResult.SUCCESS)
+            return true;
+        else
+            return false;
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        this.googleMap = googleMap;
     }
 }
 

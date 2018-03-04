@@ -26,7 +26,7 @@ public class SplashScreen extends AppCompatActivity {
     private ImageView lastFrame,startFrame,slogan;
     private Animation fade_out,fade_in;
 
-    public final String LISTLINK = "http://www.eng.uwaterloo.ca/~wrraftus/data/list.json";
+    public final String LISTLINK = "http://walterraftus.ca-central-1.elasticbeanstalk.com";
     public final String EDITWISHLISTLINK = "http://10.0.2.2:8082";
 
     @Override

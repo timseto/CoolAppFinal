@@ -80,4 +80,12 @@
         app:pressedTranslationZ="12dp"
         android:visibility="invisible" />
 
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:id="@+id/fragment"
+        android:visibility="invisible"/>
+
+
 </RelativeLayout>
