@@ -187,8 +187,6 @@ public class PageFragment extends android.support.v4.app.Fragment implements OnM
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             checkLocationPermission();
         }
-
-        mapFragment.getMapAsync(this);
         return view;
     }
 
