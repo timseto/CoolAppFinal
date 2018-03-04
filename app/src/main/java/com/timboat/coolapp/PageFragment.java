@@ -127,7 +127,7 @@ public class PageFragment extends android.support.v4.app.Fragment implements OnM
             if (googlePlayServicesAvailable()) {
                 mapFragment.getView().setVisibility(View.VISIBLE);
                 if(mGoogleMap == null)
-                 mapFragment.getMapAsync(this);
+                    mapFragment.getMapAsync(this);
             }
             haveView.setVisibility(View.VISIBLE);
         } else if (bundle.getInt("count") == 2) {
@@ -217,7 +217,7 @@ public class PageFragment extends android.support.v4.app.Fragment implements OnM
     }
 
     private void buildApi() {
-        while(mGoogleMap == null);
+        //while(mGoogleMap == null);
         mGoogleApiClient = new GoogleApiClient.Builder(getActivity().getApplicationContext()).addConnectionCallbacks(this).addOnConnectionFailedListener(this).addApi(LocationServices.API).build();
         mGoogleApiClient.connect();
     }
@@ -302,7 +302,14 @@ public class PageFragment extends android.support.v4.app.Fragment implements OnM
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
-        while(mGoogleMap == null);
+        boolean tried = false;
+        while(!mGoogleApiClient.isConnected())
+        {
+            if(!tried) {
+                mGoogleApiClient.connect();
+                tried = true;
+            }
+        }
         mLocationRequest = new LocationRequest();
         mLocationRequest.setInterval(1000);
         mLocationRequest.setFastestInterval(1000);
