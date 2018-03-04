@@ -20,17 +20,9 @@ public class SignUp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-/*
+
         signUp = (Button) findViewById(R.id.sign_up);
         signUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openLogin();
-            }
-        });
-
-        backButton = (ImageButton) findViewById(R.id.back_button);
-        backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openLogin();
@@ -44,7 +36,7 @@ public class SignUp extends AppCompatActivity {
                 openLogin();
             }
         });
-        */
+
     }
 
     private void openLogin() {

@@ -14,7 +14,6 @@ public class Home extends FragmentActivity{
     adapterList theAdapter;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

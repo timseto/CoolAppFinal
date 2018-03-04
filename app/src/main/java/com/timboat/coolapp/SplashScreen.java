@@ -28,14 +28,14 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        /*
+
         gif = (GifImageView) findViewById(R.id.gif);
         lastFrame = (ImageView) findViewById(R.id.last_frame);
 
         fade_out = AnimationUtils.loadAnimation(this,R.anim.splash_fade_out);
 
         try{
-            InputStream inputStream = getAssets().open("googleGif.gif");
+            InputStream inputStream = getAssets().open("logo.gif");
             byte[] bytes = IOUtils.toByteArray(inputStream);
             gif.setBytes(bytes);
             gif.startAnimation();
@@ -57,7 +57,7 @@ public class SplashScreen extends AppCompatActivity {
                 overridePendingTransition(0,0);
                 SplashScreen.this.finish();
             }
-        },3250);
-        */
+        },2800);
+
     }
 }

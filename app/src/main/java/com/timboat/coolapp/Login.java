@@ -2,6 +2,8 @@ package com.timboat.coolapp;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,11 +22,12 @@ public class Login extends AppCompatActivity {
     private Animation fadeIn, fadeOut;
     private ImageView logoPicture;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-/*
+
         getWindow().setEnterTransition(null);
 
         fadeOut = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_out_activity);
@@ -51,11 +54,11 @@ public class Login extends AppCompatActivity {
         });
 
         username = (EditText) findViewById(R.id.username_textbox);
-        username.setTextColor(Color.WHITE);
+        username.setTextColor(Color.BLACK);
 
         password = (EditText) findViewById(R.id.password_textbox);
-        password.setTextColor(Color.WHITE);
-        */
+        password.setTextColor(Color.BLACK);
+
     }
 
     private void openSignUp() {

@@ -1,8 +1,14 @@
 <resources>
     <string name="app_name">CoolApp</string>
-    <string name="title_activity_home">Home</string>
-    <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="username_hint">Username</string>
+    <string name="email_hint">Email</string>
+    <string name="account_true_button">Already Have an Account?</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button">Login</string>
+    <string name="forgot_password_link">Forgot your password?</string>
+    <string name="sign_up_button">Sign Up</string>
+    <string name="rmb_me_hint">Remember me</string>
+    <string name="remember_me_hint">Remember me</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

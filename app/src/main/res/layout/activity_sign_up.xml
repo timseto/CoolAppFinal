@@ -1,9 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/white_background"
     tools:context="com.timboat.coolapp.SignUp">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/login_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
+
+        <!--> App logo <!-->
+        <ImageView
+            android:id="@+id/logo_picture_2"
+            android:src="@drawable/logo_final_frame"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            android:adjustViewBounds="true" />
+
+        <!--> App name <!-->
+        <TextView
+            android:id="@+id/app_name_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/app_name"
+            android:textColor="#c1272d"
+            android:textSize="30sp"
+            />
+
+        <!--> Email section <!-->
+        <LinearLayout
+            android:id="@+id/email_layout_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/email_textbox_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:ems="12"
+                android:hint="@string/email_hint"
+                android:textColor="#000"
+                android:maxLines="1" />
+        </LinearLayout>
+
+        <!--> Username section <!-->
+        <LinearLayout
+            android:id="@+id/username_layout_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/username_textbox_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="12"
+                android:hint="@string/username_hint"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:textColor="#000" />
+        </LinearLayout>
+
+        <!--> Password section <!-->
+        <LinearLayout
+            android:id="@+id/password_layout_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/password_textbox_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="12"
+                android:hint="@string/password_hint"
+                android:textColor="#000"
+                android:maxLines="1" />
+        </LinearLayout>
+
+        <!--> Sign Up Button <!-->
+        <Button
+            android:id="@+id/sign_up"
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="15dp"
+            android:background="@drawable/login_button_style"
+            android:backgroundTint="@color/colorAccent"
+            android:text="@string/sign_up_button"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textColor="#FDFDFE"
+            android:clickable="true" />
+
+        <!--> Already Have an Account <!-->
+        <TextView
+            android:id="@+id/already_have_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/account_true_button"
+            android:textSize="12sp"
+            android:clickable="true" />
+
+    </LinearLayout>
+
+</RelativeLayout>

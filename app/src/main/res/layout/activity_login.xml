@@ -1,9 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/white_background"
     tools:context="com.timboat.coolapp.Login">
 
-</android.support.constraint.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/login_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <!--> App logo <!-->
+        <ImageView
+            android:id="@+id/logo_picture"
+            android:src="@drawable/logo_final_frame"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            android:adjustViewBounds="true"
+            android:transitionName="app_logo"/>
+
+        <!--> App name <!-->
+        <TextView
+            android:id="@+id/app_name_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/app_name"
+            android:textSize="30sp"
+            android:textColor="#a3272d"/>
+
+        <!--> Username section <!-->
+        <LinearLayout
+            android:id="@+id/username_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/username_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/username_textbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="12"
+                android:hint="@string/username_hint"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:textColor="#FDFDFE" />
+
+        </LinearLayout>
+
+        <!--> Password section <!-->
+        <LinearLayout
+            android:id="@+id/password_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/password_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/password_textbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="12"
+                android:hint="@string/password_hint"
+                android:textColor="#FDFDFE"
+                android:maxLines="1" />
+        </LinearLayout>
+
+        <!--> Remember me Checkbox <!-->
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="5dp"
+            android:buttonTint="#000"
+            android:layout_marginTop="8dp"
+            android:textColorHint="#000"
+            android:ems="15"
+            android:textSize="11sp"
+            android:hint="@string/remember_me_hint"/>
+
+        <!--> Login Button <!-->
+        <Button
+            android:id="@+id/login_button"
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="5dp"
+            android:background="@drawable/login_button_style"
+            android:text="@string/login_button"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textColor="#FDFDFE"
+            android:clickable="true" />
+
+        <!--> Sign Up Button <!-->
+        <Button
+            android:id="@+id/sign_up_button"
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="5dp"
+            android:background="@drawable/login_button_style"
+            android:backgroundTint="@color/colorAccent"
+            android:text="@string/sign_up_button"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textColor="#FDFDFE"
+            android:clickable="true" />
+
+        <!--> Password Reset <!-->
+        <TextView
+            android:id="@+id/password_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/forgot_password_link"
+            android:textSize="12sp"
+            android:clickable="true" />
+
+    </LinearLayout>
+
+</RelativeLayout>
+
