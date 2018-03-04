@@ -23,15 +23,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="40dp"
-        android:text="WishList"
-        android:layout_marginTop="30dp"
-        android:visibility="invisible"/>
+        android:layout_marginLeft="133dp"
+        android:text="Wishlist"
+        android:fontFamily="@font/roboto_light"
+        android:textColor="@color/secondaryColorLight"
+        android:layout_marginTop="40dp"
+        android:visibility="visible"/>
 
     <ListView
         android:id="@+id/item_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="110dp"
         android:visibility="invisible"/>
 
     <android.support.design.widget.FloatingActionButton
@@ -57,7 +60,7 @@
         android:adjustViewBounds="true"
         app:backgroundTint="@color/colorPrimary"
         app:pressedTranslationZ="12dp"
-        android:visibility="visible"/>
+        android:visibility="invisible"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/bubble_element1"
@@ -69,7 +72,7 @@
         android:elevation="6dp"
         app:backgroundTint="@color/colorPrimaryLight"
         app:pressedTranslationZ="12dp"
-        android:visibility="visible"/>
+        android:visibility="invisible"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/bubble_element3"
@@ -81,7 +84,7 @@
         android:elevation="6dp"
         app:backgroundTint="@color/secondaryColorLight"
         app:pressedTranslationZ="12dp"
-        android:visibility="visible" />
+        android:visibility="invisible" />
 
     <fragment
         android:layout_width="match_parent"

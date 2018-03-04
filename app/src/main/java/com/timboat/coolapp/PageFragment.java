@@ -105,15 +105,15 @@ public class PageFragment extends android.support.v4.app.Fragment implements OnM
             if (googlePlayServicesAvailable()) {
                 mapFragment.getView().setVisibility(View.VISIBLE);
                 mapFragment.getMapAsync(this);
+
             }
             haveView.setVisibility(View.VISIBLE);
+
         }
         else if(bundle.getInt("count") == 2)
         {
             bubbleStart.setVisibility(View.VISIBLE);
             wishView.setVisibility(View.VISIBLE);
-
-            wishListTitle.setVisibility(View.VISIBLE);
 
             bubbleStart.setOnClickListener(new View.OnClickListener() {
                 @Override
