@@ -1,0 +1,31 @@
+{
+	"wishlist":[
+		{"name": "Jeans","type":"0"},
+		{"name": "Fish","type":"2"},
+		{"name": "Monitor","type":"1"},
+		{"name": "uPod","type":"1"},
+		{"name": "T-Shirt","type":"0"},
+		{"name": "Lettuce","type":"2"},
+		{"name": "uPC","type":"1"},
+		{"name": "Cream","type":"0"},
+		{"name": "Tomato","type":"2"},
+		{"name": "uPadPloose","type":"1"},
+		{"name": "Baguette","type":"2"}
+
+	],
+
+	"stores":[ 
+		{
+			"name" : "WetroMarket",
+			"items": [{"name":"Lettuce","type":"2"},{"name":"Potato","type":"2"},{"name": "Tomato","type":"2"},{"name":"Batteries","type":"1"}]
+		},
+		{
+			"name": "FloorStore",
+			"items": [{"name":"Tiles","type":"0"},{"name":"Batteries","type":"1"},{"name":"Blender","type":"1"},{"name": "T-Shirt","type":"0"}]
+		},
+		{
+			"name": "OrangeInc",
+			"items": [{"name":"uPhone","type":"1"},{"name":"uPad","type":"1"},{"name": "uPC","type":"1"},{"name":"uBook","type":"1"},{"name":"uPod","type":"1"}]
+		}
+	]
+}
