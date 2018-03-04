@@ -32,12 +32,15 @@ public class adapterList extends ArrayAdapter<Item> {
         String item_name = current.getName();
         int item_type = current.getType();
         int item_price = current.getPrice();
+        String item_store = current.getStore();
 
 
         TextView name = (TextView) theView.findViewById(R.id.name);
         name.setText(item_name);
         TextView price = (TextView) theView.findViewById(R.id.price);
         price.setText("$"+ String.valueOf(item_price));
+        TextView store = (TextView) theView.findViewById(R.id.store);
+        store.setText(item_store);
 
 
         if(item_type == 0){

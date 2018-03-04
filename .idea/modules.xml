@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CoolApp.iml" filepath="$PROJECT_DIR$/CoolApp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/CoolApp.iml" filepath="$PROJECT_DIR$/CoolApp.iml" />
+      <module fileurl="file://C:\Users\Timmy\Desktop\CoolAppTwo\CoolApp.iml" filepath="C:\Users\Timmy\Desktop\CoolAppTwo\CoolApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CoolAppTwo.iml" filepath="$PROJECT_DIR$/CoolAppTwo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\Timmy\Desktop\CoolAppTwo\app\app.iml" filepath="C:\Users\Timmy\Desktop\CoolAppTwo\app\app.iml" />
     </modules>
   </component>
 </project>

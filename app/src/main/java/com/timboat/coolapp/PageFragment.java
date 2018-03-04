@@ -2,10 +2,14 @@ package com.timboat.coolapp;
 
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +24,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -36,13 +41,16 @@ import java.util.ArrayList;
 public class PageFragment extends android.support.v4.app.Fragment implements OnMapReadyCallback {
 
     TextView textView;
-    ListView listView;
+    ListView wishView;
+    ListView haveView;
     TextView wishListTitle;
     FloatingActionButton bubbleStart, bubble1, bubble2, bubble3;
     Animation bubbleOpen, bubbleClose, rotateClockwise, rotateCounterClockwise;
     RelativeLayout entireFragment;
-    adapterList theAdapter;
-    GoogleMap googleMap;
+    adapterList wishAdapter;
+    adapterList haveAdapter;
+    GoogleMap mGoogleMap;
+    SupportMapFragment mapFragment;
 
     boolean isOpen = false;
     int type;
@@ -55,16 +63,29 @@ public class PageFragment extends android.support.v4.app.Fragment implements OnM
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.page_fragment_layout,container,false);
+        View view = inflater.inflate(R.layout.page_fragment_layout, container, false);
         Bundle bundle = getArguments();
-        textView =(TextView) view.findViewById(R.id.text_view);
-        listView = (ListView) view.findViewById(R.id.item_list);
+        textView = (TextView) view.findViewById(R.id.text_view);
+        wishView = (ListView) view.findViewById(R.id.item_list);
+        haveView = (ListView) view.findViewById(R.id.have);
 
         ArrayList<Item> wishlist = new ArrayList<Item>();
-        for(String[] item : WebUtility.wishList)
-            wishlist.add(new Item(item[0],Integer.parseInt(item[1]),10));
-        theAdapter = new adapterList(this.getContext(), wishlist);
-        listView.setAdapter(theAdapter);
+        for (String[] item : WebUtility.wishList)
+            wishlist.add(new Item(item[0], Integer.parseInt(item[1]), 10,null));
+        wishAdapter = new adapterList(this.getContext(), wishlist);
+        wishView.setAdapter(wishAdapter);
+
+        ArrayList<Item> have = new ArrayList<Item>();
+        for(WebUtility.Store store: WebUtility.stores)
+            for(String[] item : store.items){
+                boolean want = false;
+                for(String desired[] : WebUtility.wishList)
+                    if(desired[0].equals(item[0])) want = true;
+                if(want)//change to want
+                    have.add(new Item(item[0],Integer.parseInt(item[1]),10,store.name));
+            }
+        haveAdapter = new adapterList(this.getContext(),have);
+        haveView.setAdapter(haveAdapter);
 
         wishListTitle = (TextView) view.findViewById(R.id.wish_list_title);
         bubbleStart = (FloatingActionButton) view.findViewById(R.id.bubble_open_start);
@@ -73,34 +94,26 @@ public class PageFragment extends android.support.v4.app.Fragment implements OnM
         bubble3 = (FloatingActionButton) view.findViewById(R.id.bubble_element3);
         entireFragment = (RelativeLayout) view.findViewById(R.id.entire_fragment);
 
-        bubbleOpen = AnimationUtils.loadAnimation(getActivity(),R.anim.bubble_open);
-        bubbleClose = AnimationUtils.loadAnimation(getActivity(),R.anim.bubble_close);
-        rotateClockwise = AnimationUtils.loadAnimation(getActivity(),R.anim.rotate_clockwise);
-        rotateCounterClockwise = AnimationUtils.loadAnimation(getActivity(),R.anim.rotate_counter_clockwise);
+        bubbleOpen = AnimationUtils.loadAnimation(getActivity(), R.anim.bubble_open);
+        bubbleClose = AnimationUtils.loadAnimation(getActivity(), R.anim.bubble_close);
+        rotateClockwise = AnimationUtils.loadAnimation(getActivity(), R.anim.rotate_clockwise);
+        rotateCounterClockwise = AnimationUtils.loadAnimation(getActivity(), R.anim.rotate_counter_clockwise);
+        mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapFragment);
+        mapFragment.getView().setVisibility(View.GONE);
 
-        if(bundle.getInt("count") == 1)
-        {
-            if(googlePlayServicesAvailable()) {
-                SupportMapFragment mapFragment = ((SupportMapFragment)getFragmentManager().findFragmentById(R.id.fragment));
-                mapFragment.setMenuVisibility(true);
-                mapFragment.getMapAsync(this);
+        if (bundle.getInt("count") == 1) {
+            if (googlePlayServicesAvailable()) {
                 mapFragment.getView().setVisibility(View.VISIBLE);
-            }
+                mapFragment.getMapAsync(this);
 
-            else {
-                textView.setVisibility(View.VISIBLE);
-                String message = Integer.toString(bundle.getInt("count"));
-                textView.setText("This is the " + message + "Swipe View..");
             }
+            haveView.setVisibility(View.VISIBLE);
+
         }
         else if(bundle.getInt("count") == 2)
         {
             bubbleStart.setVisibility(View.VISIBLE);
-            listView.setVisibility(View.VISIBLE);
-
-            //for(Item item: wishlist)
-                //theAdapter.add(item);
-
+            wishView.setVisibility(View.VISIBLE);
 
             wishListTitle.setVisibility(View.VISIBLE);
 
@@ -181,7 +194,7 @@ public class PageFragment extends android.support.v4.app.Fragment implements OnM
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        this.googleMap = googleMap;
+        mGoogleMap = googleMap;
     }
 }
 
